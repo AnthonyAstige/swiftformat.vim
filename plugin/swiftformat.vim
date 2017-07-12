@@ -11,7 +11,7 @@ function! s:format(path)
 	" * Keeps the cursor position
 	:setl autoread
 
-	execute "!swiftformat " . a:path . " >/dev/null 2>&1"
+	execute "!swiftformat --indent tab " . a:path . " >/dev/null 2>&1"
 
 	" Disable hack, now that formatting done and read should be done too
 	call timer_start(1, function("s:noautoread"))
